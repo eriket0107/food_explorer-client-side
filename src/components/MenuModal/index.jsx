@@ -26,6 +26,10 @@ const MenuModal = ({ visible, ...rest }, ref) => {
     navigate('/favoriteDish');
   }
 
+  function handleNavigateProfile() {
+    navigate('/profile');
+  }
+
   const isAdmin = Boolean(user.isAdmin);
 
   return (
@@ -36,11 +40,16 @@ const MenuModal = ({ visible, ...rest }, ref) => {
         </li>
         {!isAdmin && (
           <li>
-            <ButtonText className={'menu-list'} title={'Meus favoritos'} icon={FiHeart} onClick={handleNavigateFavoriteDish} />
+            <ButtonText
+              className={'menu-list'}
+              title={'Meus favoritos'}
+              icon={FiHeart}
+              onClick={handleNavigateFavoriteDish}
+            />
           </li>
         )}
         <li>
-          <ButtonText className={'menu-list'} title={'Perfil'} icon={FiUser} />
+          <ButtonText className={'menu-list'} title={'Perfil'} icon={FiUser} onClick={handleNavigateProfile} />
         </li>
         <li>
           <ButtonText className={'menu-list'} title={'Meu Pedido'} src={OrdersSvg} />
