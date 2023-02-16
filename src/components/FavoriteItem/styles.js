@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.li`
@@ -9,10 +10,9 @@ padding: 0px;
 width: 23.1rem;
 height: 10.4rem;
 gap: 1.3rem;
-/* border: 1px solid white; */
 `
 
-export const Img = styled.div`
+export const Img = styled(Link)`
   > img {
     height: 7.2rem;
     width: 7.2rem;
