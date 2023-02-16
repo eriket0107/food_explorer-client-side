@@ -26,4 +26,13 @@ export const Form = styled.form`
     color: ${({theme}) => theme.colors.WHITE};
     margin-top: 5rem;
   }
+
+  button{
+    display: flex;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    padding:  0 3rem;
+    margin-bottom: 5rem;
+  }
 `
