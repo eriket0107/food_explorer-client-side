@@ -17,8 +17,8 @@ export function FavoriteItem({data}){
   },[])
 
   return(
-    <Container>
-      <Img>
+    <Container to={'/'}>
+      <Img to={`/dish/${data.id}`}>
         <img src={coverDish} alt={`Imagem de ${data.title}`} />
       </Img>
       <Wrapper>
