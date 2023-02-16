@@ -26,7 +26,7 @@ export function FavoriteDish() {
       <h1>Meus Favoritos</h1>
         <List>
           {checkFavorite
-            ? checkFavorite && <h1>{favorites}</h1>
+            ? checkFavorite && <h2 className='empty-favorites'>{favorites}</h2>
             : favorites.map((favorite) => <FavoriteItem key={favorite.id} data={favorite} />)}
         </List>
       </Content>
