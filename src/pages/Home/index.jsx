@@ -20,7 +20,7 @@ export function Home() {
 
   useEffect(() => {
     async function fetchDish() {
-      const response = await api.get(`/dishes?title=${search}`);
+      const response = await api.get(`/dishes?title=${search}&ingredients=${search}`);
       setDishes(response.data);
     }
     fetchDish();
@@ -44,7 +44,9 @@ export function Home() {
           </Banner>
           {filteredDish.length && (
             <SectionSlider title="Pratos principais">
-              {filteredDish.map((dish) => <Card key={String(dish.id)} data={dish} />)}
+              {filteredDish.map((dish) => (
+                <Card key={String(dish.id)} data={dish} />
+              ))}
             </SectionSlider>
           )}
 
