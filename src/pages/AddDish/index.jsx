@@ -62,19 +62,27 @@ export const AddDish = ({}) => {
     if (!dishCategory) return alert('Selecione uma categoria para o prato.');
     const price = Number(dishPrice).toFixed(2);
 
-    const fileUploadForm = new FormData();
-    fileUploadForm.append('title', dishTitle);
-    fileUploadForm.append('category', dishCategory);
-    fileUploadForm.append('price', price);
-    fileUploadForm.append('description', dishDescription);
-    fileUploadForm.append('foodImg', dishCoverFile);
+    try {
+      const fileUploadForm = new FormData();
+      fileUploadForm.append('title', dishTitle);
+      fileUploadForm.append('category', dishCategory);
+      fileUploadForm.append('price', price);
+      fileUploadForm.append('description', dishDescription);
+      fileUploadForm.append('foodImg', dishCoverFile);
 
-    dishIngredients.map((ingredient) => {
-      fileUploadForm.append('ingredients', ingredient);
-    });
-    await api.post('/dishes', fileUploadForm);
-    navigate('/')
-    return alert('Prato cadastrado com sucesso.');
+      dishIngredients.map((ingredient) => {
+        fileUploadForm.append('ingredients', ingredient);
+      });
+      await api.post('/dishes', fileUploadForm);
+      navigate('/');
+      return alert('Prato cadastrado com sucesso.');
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert(error);
+      }
+    }
   }
 
   const isCover = dishCoverFileName ? dishCoverFileName : 'Salvar imagem';
