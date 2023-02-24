@@ -1,73 +1,74 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-`
+`;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 350px;
+  width: 100%;
   gap: 3.2rem;
-  padding:0 1rem;
-  
-  section{
+  @media (max-width: 600px) {
+    padding: 0 2rem;
+    width: 300px;
+  }
+  section {
     margin-bottom: 2.4rem;
   }
-  @media (min-width:1200px) {
+
+  > section {
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 1200px) {
     height: 512px;
     width: 1120px;
 
     display: flex;
     flex-direction: column;
-    }
-  > section{
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width:1200px) {
-  .wrapper-line{
+    .wrapper-line {
       display: flex;
       justify-content: space-between;
       gap: 3.2rem;
-      
-      > section:nth-child(2){
+
+      > section:nth-child(2) {
         width: 46.3rem;
       }
 
-      > section:last-child{
+      > section:last-child {
         width: 36.4rem;
       }
     }
 
-    .wrapper-line:nth-child(2){
+    .wrapper-line:nth-child(2) {
       margin: 3.2rem 0;
-      > section:first-child{
+      > section:first-child {
         width: 100%;
       }
-      > section:last-child{
+      > section:last-child {
         width: 36.4rem;
       }
     }
   }
-`
+`;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 10rem;
-  
-  .title-wrapper{
+  padding: 0 1rem 10rem;
+
+  .title-wrapper {
     padding: 0 1rem;
-    > h1{
+    > h1 {
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 500;
       font-size: 32px;
-      color: ${({theme}) => theme.colors.GRAY_100};
+      color: ${({ theme }) => theme.colors.GRAY_100};
       margin-bottom: 3.2rem;
     }
-    .back-btn{
+    .back-btn {
       justify-content: start;
       font-size: 2.4rem;
       margin: 2.4rem 0;
@@ -78,32 +79,37 @@ export const Content = styled.div`
       font-size: 24px;
 
       @media (max-width: 700px) {
-      margin: 0 0 1rem;
-        
+        margin: 0 0 1rem;
       }
     }
-
   }
 
-  .btns{
+  .btns {
     display: flex;
     justify-content: flex-end;
     gap: 2.4rem;
-    > button{
+    > button {
       display: flex;
       margin-top: 2.4rem;
     }
-    button:nth-child(1){
-      background-color: ${({theme})=> theme.colors.GRAYBUTTON_BG};
+    button:nth-child(1) {
+      background-color: ${({ theme }) => theme.colors.GRAYBUTTON_BG};
     }
-    @media (max-width: 700px) {
-      gap: 1.2rem;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      gap: 0;
 
-      
     }
-  } 
+    @media (max-width: 600px) {
+      padding: 0 2rem;
+      flex-direction: column;
+      > button {
+        width: 100%;
+      }
+    }
+  }
 
-  label{
+  label {
     width: 22.9rem;
 
     display: flex;
@@ -118,31 +124,29 @@ export const Content = styled.div`
     color: white;
 
     border: 1px solid white;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     padding: 1rem 0;
     cursor: pointer;
 
-    #img-input{
-    display: none;
+    #img-input {
+      display: none;
     }
-  } 
-
+  }
 
   margin: 12.8rem auto 0;
 
-  .ingredients-wrapper{
-    display: flex; 
+  .ingredients-wrapper {
+    display: flex;
     gap: 2rem;
     width: 100%;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     border: 1px solid white;
-    padding: .8rem;
+    padding: 0.8rem;
   }
 
-@media (max-width:1200px) {
-
-  label{
-    width: 100%;
+  @media (max-width: 1200px) {
+    label {
+      width: 100%;
+    }
   }
-}
-`
+`;

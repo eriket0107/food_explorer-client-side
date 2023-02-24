@@ -26,7 +26,6 @@ export const Main = styled.main`
   button{
     display: flex;
   }
-  margin-top: 0;
 }
 `
 
@@ -37,7 +36,7 @@ export const Content = styled.div`
   margin: 0 auto;
   animation-name: left-right;
   animation-duration: 1000ms;
-
+  align-items: center;
   > img{
     width: 38rem;
     height: 38rem;
