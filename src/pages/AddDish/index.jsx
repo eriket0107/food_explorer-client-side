@@ -57,22 +57,22 @@ export const AddDish = ({}) => {
   }
 
   async function handleNewDish() {
-    if (!dishTitle || !dishDescription || !dishIngredients || !dishPrice)
-      return alert('Preencha todos os campos para criar um prato.');
-    if (!dishCategory) return alert('Selecione uma categoria para o prato.');
-    const price = Number(dishPrice).toFixed(2);
-
     try {
+      if (!dishCoverFile) return alert('Adicione uma imagem ao prato.');
+      if (!dishTitle || !dishDescription || !dishIngredients || !dishPrice)
+        return alert('Preencha todos os campos para criar um prato.');
+      if (!dishCategory) return alert('Selecione uma categoria para o prato.');
+      const price = Number(dishPrice).toFixed(2);
       const fileUploadForm = new FormData();
       fileUploadForm.append('title', dishTitle);
       fileUploadForm.append('category', dishCategory);
       fileUploadForm.append('price', price);
       fileUploadForm.append('description', dishDescription);
       fileUploadForm.append('foodImg', dishCoverFile);
-
       dishIngredients.map((ingredient) => {
         fileUploadForm.append('ingredients', ingredient);
       });
+      console.log(dishIngredients);
       await api.post('/dishes', fileUploadForm);
       navigate('/');
       return alert('Prato cadastrado com sucesso.');
