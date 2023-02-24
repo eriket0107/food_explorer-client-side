@@ -41,9 +41,7 @@ export function EditDish({}) {
   }
 
   function handleRemoveIngredient(toDelete) {
-    setDishIngredients((prev) =>
-      prev.filter((ingredient) => ingredient !== toDelete)
-    );
+    setDishIngredients((prev) => prev.filter((ingredient) => ingredient !== toDelete));
   }
 
   function handleNavigationBack() {
@@ -87,7 +85,7 @@ export function EditDish({}) {
   }
 
   async function handleDeleteDish(dishId) {
-    const toDelete = confirm('Deseja excluír o filme?');
+    const toDelete = confirm('Deseja excluír o prato?');
 
     if (toDelete) {
       alert('Prato excluído com sucesso!');
@@ -124,12 +122,7 @@ export function EditDish({}) {
       <Header />
       <Content>
         <div className="title-wrapper">
-          <ButtonText
-            title="Voltar"
-            onClick={handleNavigationBack}
-            src={previousArrow}
-            className="back-btn"
-          />
+          <ButtonText title="Voltar" onClick={handleNavigationBack} src={previousArrow} className="back-btn" />
           <h1>Editar Prato</h1>
         </div>
         <Form>
@@ -138,12 +131,7 @@ export function EditDish({}) {
               <label htmlFor="img-input">
                 <FiUpload />
                 <span>{isCover}</span>
-                <input
-                  id="img-input"
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImagePreview}
-                />
+                <input id="img-input" type="file" accept="image/*" onChange={handleImagePreview} />
               </label>
             </Section>
             <Section title="Nome">
@@ -162,11 +150,7 @@ export function EditDish({}) {
               <div className="ingredients-wrapper">
                 {dishIngredients &&
                   dishIngredients.map((ingredient, index) => (
-                    <IngridientTag
-                      key={index}
-                      value={ingredient}
-                      onClick={() => handleRemoveIngredient(ingredient)}
-                    />
+                    <IngridientTag key={index} value={ingredient} onClick={() => handleRemoveIngredient(ingredient)} />
                   ))}
                 <IngridientTag
                   isNew
@@ -178,11 +162,7 @@ export function EditDish({}) {
               </div>
             </Section>
             <Section title="Preço">
-              <Input
-                placeholder="R$ 40,00"
-                value={dishPrice}
-                onChange={(e) => setDishPrice(e.target.value)}
-              />
+              <Input placeholder="R$ 40,00" value={dishPrice} onChange={(e) => setDishPrice(e.target.value)} />
             </Section>
           </div>
           <Section title="Descrição">
@@ -194,10 +174,7 @@ export function EditDish({}) {
           </Section>
         </Form>
         <div className="btns">
-          <Button
-            title="Excluir prato"
-            onClick={() => handleDeleteDish(dish.id)}
-          />
+          <Button title="Excluir prato" onClick={() => handleDeleteDish(dish.id)} />
           <Button title="Salvar Alterações" onClick={() => handleEditDish()} />
         </div>
       </Content>
