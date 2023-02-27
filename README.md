@@ -1,29 +1,37 @@
 # food_explorer-client-side
 <br>
+
 ## Food Explorer
 
 ### Front-end / Client-side
+
 A complete application with Reactjs and Node, in which the admin can register dishes, deserts and drinks and the user can buy.
 <br>
 <hr>
+
 ## Link to access the Back-end!
 
 https://food-explorer-api-eriket.onrender.com
 <br>
 <hr>
-Front-end technologies used:
+
+###Front-end technologies used: 
+
 React
 Vite
 HTML
 CSS
 JavaScript
+
 <br>
 <hr>
+
 ### Administrator credentials:
 email: admin@email.com
 password: 123
 <br>
 <hr>
+
 ### Installation
 You must have Node v16 or higher installed on your machine. In command line with the project in machine run the following commands.
 
