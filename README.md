@@ -9,6 +9,10 @@ A complete application with Reactjs and Node, in which the admin can register di
 <br>
 <hr>
 
+## To access web application 
+
+https://food-explorer-eriket.netlify.app/
+
 ## Link to access the Back-end!
 
 https://food-explorer-api-eriket.onrender.com
