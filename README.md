@@ -15,7 +15,7 @@ https://food-explorer-api-eriket.onrender.com
 <br>
 <hr>
 
-###Front-end technologies used: 
+### Front-end technologies used: 
 
 React
 Vite
