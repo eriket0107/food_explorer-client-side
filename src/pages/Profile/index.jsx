@@ -28,7 +28,6 @@ export function Profile() {
     await updateProfile({user: updated});
   }
 
-  console.log(user);
   return (
     <Container>
       <Header />

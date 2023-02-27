@@ -72,7 +72,6 @@ export const AddDish = ({}) => {
       dishIngredients.map((ingredient) => {
         fileUploadForm.append('ingredients', ingredient);
       });
-      console.log(dishIngredients);
       await api.post('/dishes', fileUploadForm);
       navigate('/');
       return alert('Prato cadastrado com sucesso.');
