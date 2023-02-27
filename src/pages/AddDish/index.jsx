@@ -127,7 +127,7 @@ export const AddDish = ({}) => {
               </div>
             </Section>
             <Section title={'Preço'}>
-              <Input placeholder={'R$ 40,00'} onChange={(e) => setDishPrice(e.target.value)} />
+              <Input placeholder={'40.00'} onChange={(e) => setDishPrice(e.target.value)} />
             </Section>
           </div>
           <Section title={'Descrição'}>

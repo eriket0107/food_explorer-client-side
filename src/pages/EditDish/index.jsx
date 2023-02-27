@@ -162,7 +162,7 @@ export function EditDish({}) {
               </div>
             </Section>
             <Section title="Preço">
-              <Input placeholder="R$ 40,00" value={dishPrice} onChange={(e) => setDishPrice(e.target.value)} />
+              <Input placeholder="40.00" value={dishPrice} onChange={(e) => setDishPrice(e.target.value)} />
             </Section>
           </div>
           <Section title="Descrição">
