@@ -2,7 +2,7 @@
 <br>
 ## Food Explorer
 
-###Front-end / Client-side
+### Front-end / Client-side
 A complete application with Reactjs and Node, in which the admin can register dishes, deserts and drinks and the user can buy.
 <br>
 <hr>
