@@ -119,7 +119,6 @@ export function EditDish({}) {
   const isCover = dishCoverFileName ? dishCoverFileName : 'Salvar imagem';
   return (
     <Container>
-      <Header />
       <Content>
         <div className="title-wrapper">
           <ButtonText title="Voltar" onClick={handleNavigationBack} src={previousArrow} className="back-btn" />
@@ -178,7 +177,6 @@ export function EditDish({}) {
           <Button title="Salvar Alterações" onClick={() => handleEditDish()} />
         </div>
       </Content>
-      <Footer />
     </Container>
   );
 }

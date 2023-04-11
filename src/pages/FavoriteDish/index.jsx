@@ -21,7 +21,6 @@ export function FavoriteDish() {
 
   return (
     <Container>
-      <Header />
       <Content>
       <h1>Meus Favoritos</h1>
         <List>
@@ -30,7 +29,6 @@ export function FavoriteDish() {
             : favorites.map((favorite) => <FavoriteItem key={favorite.id} data={favorite} />)}
         </List>
       </Content>
-      <Footer />
     </Container>
   );
 }

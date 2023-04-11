@@ -20,7 +20,7 @@ export const Dish = ({}) => {
   const { user } = useAuth();
   const [dish, setDish] = useState({});
   const [quantity, setQuantity] = useState(1);
-  const dishURL = dish.foodImg ?  `${api.defaults.baseURL}/files/${dish.foodImg}` : placeholder;
+  const dishURL = dish.foodImg ? `${api.defaults.baseURL}/files/${dish.foodImg}` : placeholder;
 
   function handlePlus() {
     setQuantity((prev) => prev + 1);
@@ -58,14 +58,8 @@ export const Dish = ({}) => {
 
   return (
     <Container>
-      <Header />
       <Main>
-        <ButtonText
-          title={'voltar'}
-          src={previousArrow}
-          className={'back-btn'}
-          onClick={handleBackNavigation}
-        />
+        <ButtonText title={'voltar'} src={previousArrow} className={'back-btn'} onClick={handleBackNavigation} />
         <Content>
           <img src={dishURL} alt="imagem do prato" />
           <div className="plate-description">
@@ -73,31 +67,20 @@ export const Dish = ({}) => {
             <p>{dish.description}</p>
             <Ingredient>
               {dish.ingredients &&
-                dish.ingredients.map((ingredient, index) => (
-                  <span key={index}>{ingredient.name}</span>
-                ))}
+                dish.ingredients.map((ingredient, index) => <span key={index}>{ingredient.name}</span>)}
             </Ingredient>
             {!isAdmin && (
               <Quantity>
                 <ButtonText src={lessBtn} onClick={handleLess} />
                 <span>{padQuantity}</span>
                 <ButtonText src={plusBtn} onClick={handlePlus} />
-                <Button
-                  className={'btn-include'}
-                  title={`Incluir - ${price.toFixed(2)}`}
-                />
+                <Button className={'btn-include'} title={`Incluir - ${price.toFixed(2)}`} />
               </Quantity>
             )}
-            {isAdmin && (
-              <Button
-                title={'Editar prato'}
-                onClick={() => handleNavigateEditdish(dish.id)}
-              />
-            )}
+            {isAdmin && <Button title={'Editar prato'} onClick={() => handleNavigateEditdish(dish.id)} />}
           </div>
         </Content>
       </Main>
-      <Footer />
     </Container>
   );
 };

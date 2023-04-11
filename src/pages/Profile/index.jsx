@@ -30,7 +30,6 @@ export function Profile() {
 
   return (
     <Container>
-      <Header />
       <Form>
         <h1>Atualize seus dados</h1>
         <Section title="Seu Nome">
@@ -59,7 +58,6 @@ export function Profile() {
         </Section>
         <Button title={'Atualizar dados'} onClick={handleUpdateProfile} />
       </Form>
-      <Footer />
     </Container>
   );
 }

@@ -7,19 +7,21 @@ import { Profile } from '../pages/Profile';
 import { EditDish } from '../pages/EditDish';
 import { FavoriteDish } from '../pages/FavoriteDish';
 
-import { SearchProvider } from '../hooks/search'
-
+import { SearchProvider } from '../hooks/search';
+import { DefaultLayout } from '../layouts/DefaultLayout';
 
 export const AppRoutes = () => {
   return (
     <SearchProvider>
       <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<Dish />} path="/dish/:id" />
-        <Route element={<AddDish />} path="/addDish" />
-        <Route element={<Profile />} path="/profile/" />
-        <Route element={<EditDish />} path="/editDish/:id" />
-        <Route element={<FavoriteDish />} path="/favoriteDish/" />
+        <Route element={<DefaultLayout />}>
+          <Route element={<Home />} path="/" />
+          <Route element={<Dish />} path="/dish/:id" />
+          <Route element={<AddDish />} path="/addDish" />
+          <Route element={<Profile />} path="/profile/" />
+          <Route element={<EditDish />} path="/editDish/:id" />
+          <Route element={<FavoriteDish />} path="/favoriteDish/" />
+        </Route>
       </Routes>
     </SearchProvider>
   );

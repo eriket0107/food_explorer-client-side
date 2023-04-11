@@ -32,7 +32,6 @@ export function Home() {
 
   return (
     <Container>
-      <Header />
       <Content>
         <div className="content-wrapper">
           <Banner>
@@ -67,7 +66,6 @@ export function Home() {
           )}
         </div>
       </Content>
-      <Footer />
     </Container>
   );
 }

@@ -88,7 +88,6 @@ export const AddDish = ({}) => {
 
   return (
     <Container>
-      <Header />
       <Content>
         <div className="title-wrapper">
           <ButtonText title={'Voltar'} onClick={handleNavigationBack} src={previousArrow} className={'back-btn'} />
@@ -141,7 +140,6 @@ export const AddDish = ({}) => {
           <Button title={'Adicionar prato'} onClick={handleNewDish} />
         </div>
       </Content>
-      <Footer />
     </Container>
   );
 };
