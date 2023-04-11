@@ -17,8 +17,7 @@
     "react-router-dom": "^6.6.2",
     "react-switch": "^7.0.0",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^5.3.6",
-    "swiper": "^8.4.6"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
