@@ -12,8 +12,8 @@ import { DefaultLayout } from '../layouts/DefaultLayout';
 
 export const AppRoutes = () => {
   return (
-    <SearchProvider>
-      <Routes>
+    <Routes>
+      <SearchProvider>
         <Route element={<DefaultLayout />}>
           <Route element={<Home />} path="/" />
           <Route element={<Dish />} path="/dish/:id" />
@@ -22,7 +22,7 @@ export const AppRoutes = () => {
           <Route element={<EditDish />} path="/editDish/:id" />
           <Route element={<FavoriteDish />} path="/favoriteDish/" />
         </Route>
-      </Routes>
-    </SearchProvider>
+      </SearchProvider>
+    </Routes>
   );
 };
