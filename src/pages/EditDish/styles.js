@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-`;
+`
 
 export const Form = styled.form`
   display: flex;
@@ -51,7 +51,7 @@ export const Form = styled.form`
       }
     }
   }
-`;
+`
 
 export const Content = styled.div`
   display: flex;
@@ -98,7 +98,6 @@ export const Content = styled.div`
     @media (max-width: 1200px) {
       flex-direction: column;
       gap: 0;
-
     }
     @media (max-width: 600px) {
       padding: 0 2rem;
@@ -149,4 +148,4 @@ export const Content = styled.div`
       width: 100%;
     }
   }
-`;
+`

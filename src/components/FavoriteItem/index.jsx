@@ -1,29 +1,33 @@
-import { Container, Img, Wrapper } from "./styles";
+import { Container, Img, Wrapper } from './styles'
 
-import { api } from "../../services/api";
-import { useState } from "react";
+import { api } from '../../services/api'
+import { useState } from 'react'
 
-import { ButtonText } from "../ButtonText";
+import { ButtonText } from '../ButtonText'
 
-export function FavoriteItem({data}){
-  const [coverDish, setCoverDish] = useState('');
+export function FavoriteItem({ data }) {
+  const [coverDish, setCoverDish] = useState('')
 
   async function handleFavorite(id) {
-    await api.post(`/favorites/${data.id}`);
+    await api.post(`/favorites/${data.id}`)
   }
 
-  useState(()=>{
+  useState(() => {
     setCoverDish(`${api.defaults.baseURL}/files/${data.foodImg}`)
-  },[])
+  }, [])
 
-  return(
+  return (
     <Container to={'/'}>
       <Img to={`/dish/${data.id}`}>
         <img src={coverDish} alt={`Imagem de ${data.title}`} />
       </Img>
       <Wrapper>
         <h2>{data.title}</h2>
-        <ButtonText className={'btn-text'} title={'Remover dos favoritos'} onClick={handleFavorite}/>
+        <ButtonText
+          className={'btn-text'}
+          title={'Remover dos favoritos'}
+          onClick={handleFavorite}
+        />
       </Wrapper>
     </Container>
   )

@@ -1,6 +1,6 @@
-import { Tag } from './styles';
+import { Tag } from './styles'
 
-import { FiPlus, FiX } from 'react-icons/fi';
+import { FiPlus, FiX } from 'react-icons/fi'
 
 export const IngridientTag = ({ title, isNew, value, onClick, ...rest }) => {
   return (
@@ -10,5 +10,5 @@ export const IngridientTag = ({ title, isNew, value, onClick, ...rest }) => {
         {isNew ? <FiPlus /> : <FiX />}
       </button>
     </Tag>
-  );
-};
+  )
+}

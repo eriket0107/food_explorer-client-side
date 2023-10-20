@@ -1,20 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: grid;
   grid-template-areas:
-  "header"
-  "content"
-  "footer"  
-  ;
+    'header'
+    'content'
+    'footer';
   grid-template-rows: 8.8rem auto 7.7rem;
-  `
+`
 export const Main = styled.main`
   grid-area: content;
   margin: 3rem auto;
   padding: 2rem;
   max-width: 112.4rem;
-  .back-btn{
+  .back-btn {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -22,13 +21,12 @@ export const Main = styled.main`
     margin-bottom: 4.2rem;
   }
 
-@media (max-width:1200px) {
-  button{
-    display: flex;
+  @media (max-width: 1200px) {
+    button {
+      display: flex;
+    }
   }
-}
 `
-
 
 export const Content = styled.div`
   display: flex;
@@ -37,53 +35,52 @@ export const Content = styled.div`
   animation-name: left-right;
   animation-duration: 1000ms;
   align-items: center;
-  > img{
+  > img {
     width: 38rem;
     height: 38rem;
     border-radius: 50%;
   }
 
-  > .plate-description{
-    color: ${({theme})=> theme.colors.WHITE};
+  > .plate-description {
+    color: ${({ theme }) => theme.colors.WHITE};
     font-family: 'Poppins';
-    h2{
-        font-weight: 500;
-        font-size: 4rem; 
-        margin-bottom: 2.4rem;
+    h2 {
+      font-weight: 500;
+      font-size: 4rem;
+      margin-bottom: 2.4rem;
     }
 
-    p{
+    p {
       font-size: 2.4rem;
       font-weight: 400;
       margin-bottom: 2.4rem;
     }
-
   }
   @media (max-width: 820px) {
-    > img{
+    > img {
       width: 26rem;
       height: 26rem;
       border-radius: 50%;
     }
 
-    > .plate-description{
+    > .plate-description {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      h2{
+      h2 {
         font-weight: 500;
-        font-size: 4rem; 
+        font-size: 4rem;
         margin-bottom: 2.4rem;
       }
 
-      p{
+      p {
         font-size: 1.62247rem;
         font-weight: 400;
         margin-bottom: 2.4rem;
       }
-      
-      button{
+
+      button {
         display: flex;
         flex-direction: row;
         padding: 1.2rem 1.62247rem;
@@ -96,57 +93,55 @@ export const Content = styled.div`
     flex-direction: column;
     gap: 1.6rem;
     margin-top: 0;
-
   }
   @keyframes left-right {
-    0%{
+    0% {
       opacity: 0;
       transform: translateX(-100px);
     }
-    100%{
+    100% {
       transform: translateX(0);
     }
   }
 `
 
 export const Ingredient = styled.div`
-display: flex;
-gap: 1.2rem;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
+  display: flex;
+  gap: 1.2rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
 
-margin-bottom: 2.4rem;
-  > span{
+  margin-bottom: 2.4rem;
+  > span {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .4rem .8rem;
-    border-radius: .5rem;
-    background-color: ${({theme})=> theme.colors.TABLE_BORDER};
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.TABLE_BORDER};
     height: 3.2rem;
   }
 `
 export const Quantity = styled.div`
   display: flex;
   align-items: center;
-  gap:3.2rem;
+  gap: 3.2rem;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
 
-  @media (max-width:800px) {
-    gap:1rem;
-    > .btn-include{
+  @media (max-width: 800px) {
+    gap: 1rem;
+    > .btn-include {
       width: 15rem;
     }
   }
-  @media (max-width:30px) {
-    > .btn-include{
+  @media (max-width: 30px) {
+    > .btn-include {
       max-width: 8.7rem;
     }
   }
-  
 `

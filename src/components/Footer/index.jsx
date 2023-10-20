@@ -1,6 +1,6 @@
-import { Container, Logo } from './styles';
+import { Container, Logo } from './styles'
 
-import FoodLogoFooter from '../../assets/foodExplorerFooter.svg';
+import FoodLogoFooter from '../../assets/foodExplorerFooter.svg'
 
 export const Footer = ({}) => {
   return (
@@ -11,5 +11,5 @@ export const Footer = ({}) => {
       </Logo>
       <span>© 2022 - Todos os direitos reservados.</span>
     </Container>
-  );
-};
+  )
+}

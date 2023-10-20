@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.textarea`
   display: flex;
@@ -11,12 +11,12 @@ export const Container = styled.textarea`
   font-size: 1.6rem;
   padding: 1.4rem;
 
-  color: ${({theme})=> theme.colors.WHITE};
+  color: ${({ theme }) => theme.colors.WHITE};
 
   width: 100%;
   height: 17.2rem;
 
-  background-color: ${({theme})=> theme.colors.TEXT_AREA};
+  background-color: ${({ theme }) => theme.colors.TEXT_AREA};
 
   border-radius: 1rem;
   border: none;

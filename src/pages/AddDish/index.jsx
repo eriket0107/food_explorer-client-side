@@ -1,96 +1,102 @@
-import { Container, Form, Content } from './styles';
+import { Container, Form, Content } from './styles'
 
-import { Input } from '../../components/Input';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { Button } from '../../components/Button';
-import { Section } from '../../components/Section';
-import { Selection } from '../../components/Selection';
-import { ButtonText } from '../../components/ButtonText';
-import { IngridientTag } from '../../components/IngridientTag';
-import { TextArea } from '../../components/TextArea';
+import { Input } from '../../components/Input'
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
+import { Button } from '../../components/Button'
+import { Section } from '../../components/Section'
+import { Selection } from '../../components/Selection'
+import { ButtonText } from '../../components/ButtonText'
+import { IngridientTag } from '../../components/IngridientTag'
+import { TextArea } from '../../components/TextArea'
 
-import previousArrow from '../../assets/previous.svg';
+import previousArrow from '../../assets/previous.svg'
 
-import { FiUpload } from 'react-icons/fi';
+import { FiUpload } from 'react-icons/fi'
 
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { api } from '../../services/api';
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { api } from '../../services/api'
 
 export const AddDish = ({}) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const [dishTitle, setDishTitle] = useState('');
-  const [dishCategory, setDishCategory] = useState('');
-  const [dishPrice, setDishPrice] = useState('');
-  const [dishDescription, setDishDescription] = useState('');
-  const [dishIngredients, setDishIngredients] = useState([]);
-  const [newDishIngredient, setNewDishIngredient] = useState('');
+  const [dishTitle, setDishTitle] = useState('')
+  const [dishCategory, setDishCategory] = useState('')
+  const [dishPrice, setDishPrice] = useState('')
+  const [dishDescription, setDishDescription] = useState('')
+  const [dishIngredients, setDishIngredients] = useState([])
+  const [newDishIngredient, setNewDishIngredient] = useState('')
 
-  const [dishCover, setDishCover] = useState(null);
-  const [dishCoverFile, setDishCoverFile] = useState('');
-  const [dishCoverFileName, setDishCoverFileName] = useState('');
+  const [dishCover, setDishCover] = useState(null)
+  const [dishCoverFile, setDishCoverFile] = useState('')
+  const [dishCoverFileName, setDishCoverFileName] = useState('')
 
   function handleAddIngredient() {
-    if (!newDishIngredient) return alert('Insira um ingrediente');
+    if (!newDishIngredient) return alert('Insira um ingrediente')
 
-    setDishIngredients((prev) => [...prev, newDishIngredient]);
-    setNewDishIngredient('');
+    setDishIngredients((prev) => [...prev, newDishIngredient])
+    setNewDishIngredient('')
   }
 
   function handleRemoveIngredient(toDelete) {
-    setDishIngredients((prev) => prev.filter((ingredient) => ingredient !== toDelete));
+    setDishIngredients((prev) =>
+      prev.filter((ingredient) => ingredient !== toDelete),
+    )
   }
 
   function handleNavigationBack() {
-    navigate(-1);
+    navigate(-1)
   }
 
   function handleImagePreview(event) {
-    const filePath = event.target.files[0];
-    setDishCoverFile(filePath);
-    setDishCoverFileName(filePath.name);
-    const imgNamePreview = URL.createObjectURL(filePath);
-    setDishCover(imgNamePreview);
+    const filePath = event.target.files[0]
+    setDishCoverFile(filePath)
+    setDishCoverFileName(filePath.name)
+    const imgNamePreview = URL.createObjectURL(filePath)
+    setDishCover(imgNamePreview)
   }
 
   async function handleNewDish() {
     try {
-      if (!dishCoverFile) return alert('Adicione uma imagem ao prato.');
+      if (!dishCoverFile) return alert('Adicione uma imagem ao prato.')
       if (!dishTitle || !dishDescription || !dishIngredients || !dishPrice)
-        return alert('Preencha todos os campos para criar um prato.');
-      if (!dishCategory) return alert('Selecione uma categoria para o prato.');
-      const price = Number(dishPrice).toFixed(2);
-      const fileUploadForm = new FormData();
-      fileUploadForm.append('title', dishTitle);
-      fileUploadForm.append('category', dishCategory);
-      fileUploadForm.append('price', price);
-      fileUploadForm.append('description', dishDescription);
-      fileUploadForm.append('foodImg', dishCoverFile);
+        return alert('Preencha todos os campos para criar um prato.')
+      if (!dishCategory) return alert('Selecione uma categoria para o prato.')
+      const price = Number(dishPrice).toFixed(2)
+      const fileUploadForm = new FormData()
+      fileUploadForm.append('title', dishTitle)
+      fileUploadForm.append('category', dishCategory)
+      fileUploadForm.append('price', price)
+      fileUploadForm.append('description', dishDescription)
+      fileUploadForm.append('foodImg', dishCoverFile)
       dishIngredients.map((ingredient) => {
-        fileUploadForm.append('ingredients', ingredient);
-      });
-      await api.post('/dishes', fileUploadForm);
-      navigate('/');
-      return alert('Prato cadastrado com sucesso.');
+        fileUploadForm.append('ingredients', ingredient)
+      })
+      await api.post('/dishes', fileUploadForm)
+      navigate('/')
+      return alert('Prato cadastrado com sucesso.')
     } catch (error) {
       if (error.response) {
-        alert(error.response.data.message);
+        alert(error.response.data.message)
       } else {
-        alert(error);
+        alert(error)
       }
     }
   }
 
-  const isCover = dishCoverFileName ? dishCoverFileName : 'Salvar imagem';
+  const isCover = dishCoverFileName || 'Salvar imagem'
 
   return (
     <Container>
       <Content>
         <div className="title-wrapper">
-          <ButtonText title={'Voltar'} onClick={handleNavigationBack} src={previousArrow} className={'back-btn'} />
+          <ButtonText
+            title={'Voltar'}
+            onClick={handleNavigationBack}
+            src={previousArrow}
+            className={'back-btn'}
+          />
           <h1>Adicionar Prato</h1>
         </div>
         <Form>
@@ -99,11 +105,19 @@ export const AddDish = ({}) => {
               <label htmlFor="img-input">
                 <FiUpload />
                 <span>{isCover}</span>
-                <input id="img-input" type={'file'} accept="image/*" onChange={handleImagePreview} />
+                <input
+                  id="img-input"
+                  type={'file'}
+                  accept="image/*"
+                  onChange={handleImagePreview}
+                />
               </label>
             </Section>
             <Section title={'Nome'}>
-              <Input placeholder={'Ex.: Salada Ceasar'} onChange={(e) => setDishTitle(e.target.value)} />
+              <Input
+                placeholder={'Ex.: Salada Ceasar'}
+                onChange={(e) => setDishTitle(e.target.value)}
+              />
             </Section>
             <Section title={'Categoria'}>
               <Selection onChange={(e) => setDishCategory(e.target.value)} />
@@ -113,7 +127,11 @@ export const AddDish = ({}) => {
             <Section title={'Ingredientes'}>
               <div className="ingredients-wrapper">
                 {dishIngredients.map((ingredient, index) => (
-                  <IngridientTag key={index} value={ingredient} onClick={() => handleRemoveIngredient(ingredient)} />
+                  <IngridientTag
+                    key={index}
+                    value={ingredient}
+                    onClick={() => handleRemoveIngredient(ingredient)}
+                  />
                 ))}
 
                 <IngridientTag
@@ -126,12 +144,19 @@ export const AddDish = ({}) => {
               </div>
             </Section>
             <Section title={'Preço'}>
-              <Input type={'number'} min={0.01} placeholder={'40.00'} onChange={(e) => setDishPrice(e.target.value)} />
+              <Input
+                type={'number'}
+                min={0.01}
+                placeholder={'40.00'}
+                onChange={(e) => setDishPrice(e.target.value)}
+              />
             </Section>
           </div>
           <Section title={'Descrição'}>
             <TextArea
-              placeholder={'Fale brevemente sobre o prato, seus ingredientes e composição'}
+              placeholder={
+                'Fale brevemente sobre o prato, seus ingredientes e composição'
+              }
               onChange={(e) => setDishDescription(e.target.value)}
             />
           </Section>
@@ -141,5 +166,5 @@ export const AddDish = ({}) => {
         </div>
       </Content>
     </Container>
-  );
-};
+  )
+}

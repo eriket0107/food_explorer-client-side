@@ -1,84 +1,76 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
-  background-color: ${({theme})=> theme.colors.CARD_BG};
+  background-color: ${({ theme }) => theme.colors.CARD_BG};
   width: 30rem;
   height: 51.2rem;
   padding: 20px 40px 40px;
   border: 2px solid black;
-  border-radius: .8rem;
-  
+  border-radius: 0.8rem;
+
   button {
     display: flex;
-
   }
-  
-  > .button-heart{
-    svg path{
-      color: ${({theme}) => theme.colors.REDBUTTON_BG};
+
+  > .button-heart {
+    svg path {
+      color: ${({ theme }) => theme.colors.REDBUTTON_BG};
     }
   }
 `
 
 export const Content = styled.div`
-
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem; 
+  margin-top: 3rem;
   gap: 1.5rem;
-  color: ${({theme})=> theme.colors.WHITE};
-  
-  > a{
+  color: ${({ theme }) => theme.colors.WHITE};
+
+  > a {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
 
-    >h1{
+    > h1 {
       font-family: 'Poppins';
       font-style: normal;
       font-weight: 700;
       font-size: 2.4rem;
-      color: ${({theme})=> theme.colors.WHITE};
+      color: ${({ theme }) => theme.colors.WHITE};
     }
 
-    p{
+    p {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
       font-size: 1.4rem;
       text-align: center;
-      color: ${({theme})=> theme.colors.GRAY_200};
+      color: ${({ theme }) => theme.colors.GRAY_200};
     }
-    .description{
+    .description {
       width: 256px;
       white-space: nowrap;
-      overflow: hidden; 
+      overflow: hidden;
       text-overflow: ellipsis;
     }
 
-
-    > img{
+    > img {
       width: 20rem;
       height: 20rem;
-      border-radius:50%;
+      border-radius: 50%;
     }
   }
 
-
-  .price-p{
+  .price-p {
     font-size: 3.2rem;
     text-align: center;
-    color: ${({theme}) => theme.colors.PRICE}
+    color: ${({ theme }) => theme.colors.PRICE};
   }
 
-  
-
-  .quantity-section{
-
+  .quantity-section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -86,9 +78,8 @@ export const Content = styled.div`
     font-weight: 700;
     font-size: 2rem;
 
-    > button{
+    > button {
       display: flex;
     }
   }
 `
-

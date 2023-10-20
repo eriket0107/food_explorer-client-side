@@ -1,6 +1,6 @@
-import { Container, Select } from './styles';
+import { Container, Select } from './styles'
 
-export const Selection = ({...rest}) => {
+export const Selection = ({ ...rest }) => {
   return (
     <Container>
       <Select {...rest}>
@@ -10,5 +10,5 @@ export const Selection = ({...rest}) => {
         <option value="drinks">Bebidas</option>
       </Select>
     </Container>
-  );
-};
+  )
+}

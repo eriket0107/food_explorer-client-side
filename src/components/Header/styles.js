@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const Container = styled.header`
   display: flex;
@@ -14,40 +14,40 @@ export const Logo = styled(Link)`
   display: flex;
   gap: 12px;
   align-items: center;
-  
-  > img{
+
+  > img {
     height: 40px;
     width: 40px;
-  }  
+  }
 
-  > div{
-    h1{
+  > div {
+    h1 {
       display: none;
-      color: ${({theme})=> theme.colors.WHITE};
+      color: ${({ theme }) => theme.colors.WHITE};
     }
-    span{
+    span {
       display: none;
       justify-content: end;
-      color: ${({theme}) => theme.colors.PRICE};
+      color: ${({ theme }) => theme.colors.PRICE};
     }
-    @media (min-width: 900px){
-    > h1, span{
-    display: flex;
+    @media (min-width: 900px) {
+      > h1,
+      span {
+        display: flex;
+      }
+    }
+    @media (min-width: 900px) {
+      > h1 {
+        display: flex;
+      }
     }
   }
-  @media (min-width: 900px){
-    > h1{
-    display: flex;
-    }
-  }
-}
 `
 export const SearchContent = styled.div`
   max-height: 8.8rem;
-  width:23rem;
-  @media (min-width: 600px){
-    width:40rem;
-    
+  width: 23rem;
+  @media (min-width: 600px) {
+    width: 40rem;
   }
 `
 export const Content = styled.nav`
@@ -57,33 +57,33 @@ export const Content = styled.nav`
   justify-content: space-between;
   width: 100vw;
   height: 12.8rem;
-  
+
   gap: 3.2rem;
-  
-  background-color: ${({theme})=> theme.colors.BG_HEADERFOOTER};
-  
-  .mobile-menu{
+
+  background-color: ${({ theme }) => theme.colors.BG_HEADERFOOTER};
+
+  .mobile-menu {
     display: flex;
   }
-  
-  @media (min-width: 1300px){
+
+  @media (min-width: 1300px) {
     padding: 4rem 12rem;
     flex-direction: row;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
-    .mobile-menu{
-        display: none;
-      }
+    .mobile-menu {
+      display: none;
+    }
   }
   @media (max-width: 1300px) {
     .orders {
-    > span{
-      display: none     
+      > span {
+        display: none;
+      }
     }
-  }
-  .desktop-buttons{
+    .desktop-buttons {
       display: none;
     }
-}
+  }
 `

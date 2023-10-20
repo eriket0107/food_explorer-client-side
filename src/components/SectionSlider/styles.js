@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.section`
   display: flex;
@@ -10,9 +10,9 @@ export const Container = styled.section`
 
   z-index: -1;
 
-  > h2{
+  > h2 {
     display: flex;
-    color: ${({theme}) => theme.colors.WHITE};
+    color: ${({ theme }) => theme.colors.WHITE};
     align-items: center;
     font-family: 'Poppins';
     font-style: normal;
@@ -20,7 +20,7 @@ export const Container = styled.section`
     font-size: 3.2rem;
   }
   @media (max-width: 700px) {
-    align-items:center;
+    align-items: center;
     gap: 6rem;
   }
 `
@@ -34,14 +34,14 @@ export const Slider = styled.div`
   animation-name: appear;
   animation-duration: 1000ms;
   > div {
-      > div:first-child {
+    > div:first-child {
       margin-left: 50px;
     }
     > div:last-child {
       margin-right: 50px;
     }
   }
-  
+
   > button {
     width: 50px;
     height: 51.2rem;
@@ -64,7 +64,6 @@ export const Slider = styled.div`
   }
 
   > div {
-    
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -74,10 +73,8 @@ export const Slider = styled.div`
 
     scroll-behavior: smooth;
     ::-webkit-scrollbar-thumb {
-      box-shadow: inset 0 0 0px 6px ${({theme})=> theme.colors.REDBUTTON_BG};
-    }   
-        
-    
+      box-shadow: inset 0 0 0px 6px ${({ theme }) => theme.colors.REDBUTTON_BG};
+    }
   }
 
   @media (max-width: 1000px) {
@@ -85,19 +82,18 @@ export const Slider = styled.div`
   }
   @media (max-width: 900px) {
     width: 70rem;
-    }
-    @media (max-width: 700px) {
+  }
+  @media (max-width: 700px) {
     width: 50rem;
-    }
-    @media (max-width: 500px) {
-      width: 30rem; 
-      
+  }
+  @media (max-width: 500px) {
+    width: 30rem;
   }
 
   @keyframes appear {
-  0%{
-    opacity: 0;
-    transform: scale(0.9)
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
   }
-}
 `

@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { Container } from './styles'
 
 export const Section = ({ title, children }) => {
   return (
@@ -6,5 +6,5 @@ export const Section = ({ title, children }) => {
       <h2>{title}</h2>
       {children}
     </Container>
-  );
-};
+  )
+}

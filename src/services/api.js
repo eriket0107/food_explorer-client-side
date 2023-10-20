@@ -1,6 +1,8 @@
-import axios, { Axios } from 'axios';
+import axios, { Axios } from 'axios'
 
 export const api = axios.create({
-  baseURL: 'https://food-explorer-api-eriket.onrender.com',
-});
-('http://localhost:3333');
+  baseURL: 'http://localhost:3000',
+})
+// ('http://localhost:3333');
+
+// 'https://food-explorer-api-eriket.onrender.com'

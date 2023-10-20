@@ -1,34 +1,35 @@
-import { Container, Content, Banner } from './styles';
+import { Container, Content, Banner } from './styles'
 
-import { Card } from '../../components/Card';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { SectionSlider } from '../../components/SectionSlider';
-import { AddDishCard } from '../../components/AddDishCard';
+import { Card } from '../../components/Card'
+import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
+import { SectionSlider } from '../../components/SectionSlider'
+import { AddDishCard } from '../../components/AddDishCard'
 
-import BannerImg from '../../assets/foodExplorerBanner.svg';
-import { api } from '../../services/api';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useAuth } from '../../hooks/auth';
-import { useSearch } from '../../hooks/search';
+import BannerImg from '../../assets/foodExplorerBanner.svg'
+import { api } from '../../services/api'
+import { useEffect, useState } from 'react'
+import { useAuth } from '../../hooks/auth'
+import { useSearch } from '../../hooks/search'
 
 export function Home() {
-  const { user } = useAuth();
-  const { search } = useSearch();
-  const [dishes, setDishes] = useState([]);
+  const { user } = useAuth()
+  const { search } = useSearch()
+  const [dishes, setDishes] = useState([])
 
   useEffect(() => {
     async function fetchDish() {
-      const response = await api.get(`/dishes?title=${search}&ingredients=${search}`);
-      setDishes(response.data);
+      const response = await api.get(
+        `/dishes?title=${search}&ingredients=${search}`,
+      )
+      setDishes(response.data)
     }
-    fetchDish();
-  }, [search]);
+    fetchDish()
+  }, [search])
 
-  const filteredDish = dishes.filter((dish) => dish.category === 'main');
-  const filteredDissert = dishes.filter((dish) => dish.category === 'dissert');
-  const filteredDrinks = dishes.filter((dish) => dish.category === 'drinks');
+  const filteredDish = dishes.filter((dish) => dish.category === 'main')
+  const filteredDissert = dishes.filter((dish) => dish.category === 'dissert')
+  const filteredDrinks = dishes.filter((dish) => dish.category === 'drinks')
 
   return (
     <Container>
@@ -67,5 +68,5 @@ export function Home() {
         </div>
       </Content>
     </Container>
-  );
+  )
 }

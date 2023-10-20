@@ -1,14 +1,14 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
 
-import { Home } from '../pages/Home';
-import { Dish } from '../pages/Dish';
-import { AddDish } from '../pages/AddDish';
-import { Profile } from '../pages/Profile';
-import { EditDish } from '../pages/EditDish';
-import { FavoriteDish } from '../pages/FavoriteDish';
+import { Home } from '../pages/Home'
+import { Dish } from '../pages/Dish'
+import { AddDish } from '../pages/AddDish'
+import { Profile } from '../pages/Profile'
+import { EditDish } from '../pages/EditDish'
+import { FavoriteDish } from '../pages/FavoriteDish'
 
-import { SearchProvider } from '../hooks/search';
-import { DefaultLayout } from '../layouts/DefaultLayout';
+import { SearchProvider } from '../hooks/search'
+import { DefaultLayout } from '../layouts/DefaultLayout'
 
 export const AppRoutes = () => {
   return (
@@ -24,5 +24,5 @@ export const AppRoutes = () => {
         </Route>
       </Routes>
     </SearchProvider>
-  );
-};
+  )
+}

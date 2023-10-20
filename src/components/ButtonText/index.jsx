@@ -1,4 +1,4 @@
-import { Container } from './styles';
+import { Container } from './styles'
 
 export const ButtonText = ({ title, icon: Icon, src, ...rest }) => {
   return (
@@ -6,5 +6,5 @@ export const ButtonText = ({ title, icon: Icon, src, ...rest }) => {
       {(Icon && <Icon size={20} />) || (src && <img src={src} />)}
       {title}
     </Container>
-  );
-};
+  )
+}

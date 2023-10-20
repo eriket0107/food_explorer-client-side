@@ -1,22 +1,23 @@
-import { Container, Slider } from './styles';
+import { Container, Slider } from './styles'
 
-import { ButtonText } from '../ButtonText';
+import { ButtonText } from '../ButtonText'
 
-import { useRef } from 'react';
+import { useRef } from 'react'
 
-import previousArrow from '../../assets/previous.svg';
-import nextArrow from '../../assets/next.svg';
+import previousArrow from '../../assets/previous.svg'
+import nextArrow from '../../assets/next.svg'
 
 export const SectionSlider = ({ title, children }) => {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
 
+  console.log(sliderRef.current.offsetWidth)
   function handleNext() {
-    event.preventDefault();
-    sliderRef.current.scrollLeft += sliderRef.current.offsetWidth;
+    event.preventDefault()
+    sliderRef.current.scrollLeft += sliderRef.current.offsetWidth
   }
   function handleBack() {
-    event.preventDefault();
-    sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth;
+    event.preventDefault()
+    sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth
   }
   return (
     <Container>
@@ -35,5 +36,5 @@ export const SectionSlider = ({ title, children }) => {
         />
       </Slider>
     </Container>
-  );
-};
+  )
+}

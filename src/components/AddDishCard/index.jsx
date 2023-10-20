@@ -1,10 +1,10 @@
-import { Container } from './styles';
+import { Container } from './styles'
 
-import { ButtonText } from '../ButtonText';
+import { ButtonText } from '../ButtonText'
 
-import plusBtn from '../../assets/plusBtn.svg';
+import plusBtn from '../../assets/plusBtn.svg'
 
-import { FiPlusCircle } from 'react-icons/fi';
+import { FiPlusCircle } from 'react-icons/fi'
 
 export const AddDishCard = () => {
   return (
@@ -12,5 +12,5 @@ export const AddDishCard = () => {
       <h1>Criar novo prato</h1>
       <ButtonText icon={FiPlusCircle} />
     </Container>
-  );
-};
+  )
+}
